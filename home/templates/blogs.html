@@ -1,0 +1,116 @@
+{% extends "master.html" %}
+{% load static %}
+{% block start %}
+    <div class="section page-banner">
+        <img loading="lazy" src="{% static 'img/shape/shape-8.png' %}" class="shape-1 animation-round" alt="Shape"/>
+        <img loading="lazy" src="{% static 'img/shape/shape-23.png' %}" class="shape-2" alt="Shape"/>
+        <div class="container">
+            <div class="page-banner-content">
+                <ul class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="active">Blog</li>
+                </ul>
+                <h2 class="title">Our<span class="ms-1">Blog</span></h2>
+            </div>
+        </div>
+        <div class="shape-icon-box">
+            <img class="icon-shape-1 animation-left" src="{% static 'img/shape/shape-5.png' %}" alt="Shape">
+            <div class="box-content">
+                <div class="box-wrapper">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+            </div>
+            <img loading="lazy" src="{% static 'img/shape/shape-6.png' %}" class="icon-shape-2" alt="Shape" />
+        </div>
+        <img loading="lazy" src="{% static 'img/shape/shape-24.png' %}" class="shape-3" alt="Shape" />
+        <img loading="lazy" src="{% static 'img/author/author-11.jpg' %}" class="shape-author" alt="Shape" />
+    </div>
+
+    <div class="section section-padding mt-n10">
+        <div class="container">
+            <div class="blog-wrapper">
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="javascript:;">
+                                    <img src="{% static 'img/blog/' %}{{ post.image.blog }}" alt="Blog">
+                                </a>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-author">
+                                    <div class="author">
+                                        <div class="author-thumb">
+                                            <a href="javascript:;">
+                                                <img src="{% static 'img/author/' %}{{ post.image.auth }}" alt="Author">
+                                            </a>
+                                        </div>
+                                        <div class="author-name">
+                                            <a class="name" href="javascript:;">{{ post.author }}</a>
+                                        </div>
+                                    </div>
+                                    <div class="tag">
+                                        <a href="javascript:;">{{ post.tag }}</a>
+                                    </div>
+                                </div>
+
+                                <h4 class="title">
+                                    <a href="javascript:;">
+                                        {{ post.title }}
+                                    </a>
+                                </h4>
+                                <div class="blog-meta">
+                                    <span><i class="fa-solid fa-calendar-days me-1"></i>21 March, 2021</span>
+                                    <span><i class="fa-solid fa-bookmark me-1"></i>2,568+ </span>
+                                </div>
+                                <a href="javascript:;" class="btn btn-secondary btn-hover-primary">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="page-pagination">
+                <ul class="pagination justify-content-center">
+                    <li><a href="javascript:;"><i class="fa-solid fa-angle-left"></i></a></li>
+                    <li><a class="active" href="javascript:;">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;"><i class="fa-solid fa-angle-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section section-padding download-section">
+        <div class="app-shape-1"></div>
+        <div class="app-shape-2"></div>
+        <div class="app-shape-3"></div>
+        <div class="app-shape-4"></div>
+        <div class="container">
+            <div class="download-app-wrapper mt-n6">
+                <div class="section-title section-title-white">
+                    <h5 class="sub-title">Ready to start?</h5>
+                    <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
+                </div>
+                <img class="shape-1 animation-right" src="{% static 'img/shape/shape-14.png' %}" alt="Shape">
+                <div class="download-app-btn">
+                    <ul class="app-btn">
+                        <li>
+                            <a href="javascript:;">
+                                <img src="{% static 'img/google-play.png' %}" alt="Google Play">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img src="{% static 'img/app-store.png' %}" alt="App Store">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
